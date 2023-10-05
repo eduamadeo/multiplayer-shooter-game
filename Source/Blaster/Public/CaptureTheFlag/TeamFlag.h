@@ -18,6 +18,7 @@ enum class EFlagState : uint8
 };
 
 class USphereComponent;
+class UWidgetComponent;
 
 UCLASS()
 class BLASTER_API ATeamFlag : public AActor
@@ -64,6 +65,9 @@ private:
 
 	UFUNCTION()
 	void OnRep_FlagState();
+
+	UPROPERTY(VisibleAnywhere)
+	UWidgetComponent* PickupWidget;
 
 public:
 

@@ -6,6 +6,7 @@
 #include "Character/BlasterCharacter.h"
 #include "BlasterComponents/CombatComponent.h"
 #include <Net/UnrealNetwork.h>
+#include <Components/WidgetComponent.h>
 
 ATeamFlag::ATeamFlag()
 {
@@ -25,6 +26,9 @@ ATeamFlag::ATeamFlag()
 	AreaSphere->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 	AreaSphere->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Overlap);
 	AreaSphere->SetSphereRadius(150.0f);
+
+	PickupWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("PickupWidget"));
+	PickupWidget->SetupAttachment(RootComponent);
 }
 
 void ATeamFlag::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -40,6 +44,11 @@ void ATeamFlag::BeginPlay()
 
 	InitialTransform = GetActorTransform();
 	SetFlagState(EFlagState::EFS_Initial);
+
+	if (PickupWidget)
+	{
+		PickupWidget->SetVisibility(true);
+	}
 
 	if (HasAuthority())
 	{
