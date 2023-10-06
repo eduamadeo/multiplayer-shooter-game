@@ -1045,6 +1045,7 @@ void UCombatComponent::OnRep_EquippedWeapon()
 		EquippedWeapon->SetWeaponState(EWeaponState::EWS_Equipped);
 		EquippedWeapon->EnableCustomDepth(false);
 		EquippedWeapon->SetHUDAmmo();
+		EquippedWeapon->SetHUDWeaponType();
 
 		AttachActorToRightHand(EquippedWeapon);
 		Character->GetCharacterMovement()->bOrientRotationToMovement = false;

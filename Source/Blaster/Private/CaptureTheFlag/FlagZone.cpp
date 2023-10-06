@@ -7,6 +7,7 @@
 #include "GameMode/CaptureTheFlagGameMode.h"
 #include "CaptureTheFlag/TeamFlag.h"
 #include "Character/BlasterCharacter.h"
+#include "BlasterComponents/CombatComponent.h"
 
 AFlagZone::AFlagZone()
 {
