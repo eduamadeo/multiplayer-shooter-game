@@ -542,14 +542,13 @@ void ABlasterPlayerController::ToggleHudEliminatedText(bool ForceHidden)
 	}
 }
 
-void ABlasterPlayerController::SetHudWeaponTypeText(EWeaponType WeaponType)
+void ABlasterPlayerController::SetHudWeaponTypeText(FString WeaponNameString)
 {
 	BlasterHUD = BlasterHUD == nullptr ? Cast<ABlasterHUD>(GetHUD()) : BlasterHUD;
 	bool bIsHudValid = BlasterHUD && BlasterHUD->CharacterOverlay && BlasterHUD->CharacterOverlay->WeaponTypeText;
 	if (bIsHudValid)
 	{
-		FText WeaponTypeText;
-		UEnum::GetDisplayValueAsText(WeaponType, WeaponTypeText);
+		FText WeaponTypeText = FText::FromString(WeaponNameString);
 		BlasterHUD->CharacterOverlay->WeaponTypeText->SetText(WeaponTypeText);
 	}
 }

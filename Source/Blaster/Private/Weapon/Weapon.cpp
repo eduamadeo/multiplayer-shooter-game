@@ -106,7 +106,7 @@ void AWeapon::SetHUDWeaponType()
 		BlasterOwnerController = BlasterOwnerController == nullptr ? Cast<ABlasterPlayerController>(BlasterOwnerCharacter->Controller) : BlasterOwnerController;
 		if (BlasterOwnerController)
 		{
-			BlasterOwnerController->SetHudWeaponTypeText(WeaponType);
+			BlasterOwnerController->SetHudWeaponTypeText(WeaponName);
 		}
 	}
 }

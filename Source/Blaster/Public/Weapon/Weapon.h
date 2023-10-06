@@ -197,6 +197,9 @@ private:
 	UPROPERTY(Replicated)
 	bool bWasPickedUp = false;
 
+	UPROPERTY(EditAnywhere)
+	FString WeaponName;
+
 public:	
 	
 	void SetWeaponState(EWeaponState State);

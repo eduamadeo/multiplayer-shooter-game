@@ -28,7 +28,7 @@ public:
 	void SetHudWeaponAmmo(int32 Ammo);
 	void SetHudCarriedAmmo(int32 Ammo);
 	void ToggleHudEliminatedText(bool ForceHidden);
-	void SetHudWeaponTypeText(EWeaponType WeaponType);
+	void SetHudWeaponTypeText(FString WeaponNameString);
 	void SetHudMatchCountdown(float CountdownTime);
 	void SetHudAnnouncementCountdown(float CountdownTime);
 	void SetHudGrenades(int32 Grenades);
