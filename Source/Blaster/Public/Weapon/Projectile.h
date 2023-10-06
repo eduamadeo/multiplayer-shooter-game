@@ -18,6 +18,8 @@ class BLASTER_API AProjectile : public AActor
 public:
 	AProjectile();
 	virtual void Tick(float DeltaTime) override;
+	
+	void CallMulticastPlayHitEffect();
 
 	/*
 	* Used with server-side rewind
@@ -99,8 +101,6 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	float DestroyTime = 3.f;
-
-	void CallMulticastPlayHitEffect();
 
 public:
 	
